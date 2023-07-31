@@ -1,0 +1,28 @@
+.app {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  max-width: 90rem;
+  min-height: 50rem;
+  max-height: 60rem;
+  border-radius: 1.2rem;
+  margin: auto;
+  z-index: 1000;
+  display: grid;
+  grid-template-columns: 25rem 1fr;
+  background-color: rgba(236, 236, 236, 0.342);
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+}
+
+
+@media (max-width: 90rem)
+{
+
+  .app {
+    min-height: 100vh;
+  }
+
+
+}

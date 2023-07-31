@@ -1,0 +1,46 @@
+.icon--add {
+  position: absolute;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  width: 5rem;
+  cursor: pointer;
+}
+
+.form {
+  max-width: 40rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin: 0 auto;
+  background-color: rgb(236, 236, 236);
+  padding: 2rem 6rem;
+  border-radius: 2rem;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.form input {
+  padding: 0 1rem 0 1rem;
+  border-radius: 1rem;
+}
+
+.form select {
+  background-color: rgba(236, 236, 236, 0.642);
+  border-radius: 1rem;
+}
+
+.form select option {
+  background-color: rgba(236, 236, 236, 0.357);
+}
+
+.form div {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.form button {
+  width: 100%;
+}

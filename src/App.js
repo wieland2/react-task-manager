@@ -1,25 +1,40 @@
-import logo from './logo.svg';
-import './App.css';
+import Tasks from "./Tasks";
+import Form from "./Form";
+import Dashboard from "./Dashboard";
+import { useState } from "react";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+export default function App() {
+
+  const [tasks, setTasks] = useState([])
+
+  function handleAddTasks(task) {
+    setTasks((tasks) => [...tasks, task])
+  }
+
+  function handleDeleteTask(id) {
+    setTasks((tasks) => tasks.filter(task=> task.id !== id))
+  }
+
+
+
+  function handleToggleTask(id) {
+    setTasks((tasks) => tasks.map((task) =>
+      task.id === id ? {...task, completed: !task.completed} : task
+    ))
+  }
+
+
+
+
+
+
+  return  (
+    <div className="app">
+        <Dashboard tasks={tasks} />
+      <div className="tasks-container">
+        <Tasks tasks={tasks} onDeleteTask={handleDeleteTask} onToggleTask={handleToggleTask} />
+        <Form onAddTasks={handleAddTasks} />
+      </div>
     </div>
-  );
+  )
 }
-
-export default App;
